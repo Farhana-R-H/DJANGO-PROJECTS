@@ -1,7 +1,7 @@
 # Django Projects Repository #
 This repository contains a collection of Django projects that cover the fundamental aspects of web development with Django. It includes basic configurations, user authentication setups, and various small projects that demonstrate key concepts like the Model-View-Template (MVT) architecture, CRUD operations, forms, and more.
 
-##The projects showcase:##
+THE PROJECT SHOWCASE:
 
 Setting up Django with user authentication and session management.
 
