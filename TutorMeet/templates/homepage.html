@@ -1,0 +1,186 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>TutorMeet - Study Anywhere Anytime</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #ca7a54, #fff4b2);
+      color: #918787;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* Bubbles */
+    .bubble-container {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+
+    .bubble {
+      position: absolute;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .bubble img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .bubble.b1 { top: 40px; left: 40px; }
+    .bubble.b2 { bottom: 40px; right: 50px; width: 220px; height: 220px; }
+    .bubble.b3 { top: 60%; left: -30px; width: 150px; height: 150px; }
+    .bubble.b4 { top: 10%; right: -20px; width: 160px; height: 160px; }
+
+    /* Navigation bar */
+    .navbar {
+      background-color: #323030;
+      padding: 20px 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
+
+    .navbar .logo {
+      font-size: 32px;
+      font-weight: bold;
+      color: white
+      
+    }
+
+    .navbar .menu {
+      list-style: none;
+      display: flex;
+      margin: 0;
+   
+      .menu {
+  margin-left: -20px; /* Adjust the value as needed */
+
+
+    }
+      
+    }
+
+    .navbar .menu li {
+      margin-left: 70px;
+    }
+
+    .navbar .menu a {
+      text-decoration: none;
+      color: white;
+      font-size: 18px;
+      font-weight: normal;
+      padding: 5px 10px;
+      border-radius: 4px;
+    }
+
+    .navbar .menu a:hover {
+      background-color: #fff4b2;
+      color: #333;
+    }
+
+    .main-content {
+      text-align: center;
+      margin-top: 80px;
+    }
+
+    .main-content h1 {
+  font-size: 4.0em; /* Slightly reduced for balance */
+  color: #333; /* A darker, softer color for better contrast */
+  font-weight:bold; /* Slightly lighter for a modern look */
+  margin-bottom: 20px;
+  letter-spacing: 1px; /* Reduced for a smoother appearance */
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  position: relative;
+  top: 40px; /* Slightly reduced for a more centered appearance */
+}
+    .main-content p {
+      font-size: 1.2em;
+      color: #555;
+      margin-bottom: 30px;
+      width: 60%;
+      margin-left: auto;
+      margin-right: auto;
+      position: relative;
+      top:50px;
+    }
+
+    .register-container {
+      margin-top: 20px;
+    }
+
+    .register-button {
+      background-color: #323030;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      font-size: 16px;
+      border-radius: 30px;
+      cursor: pointer;
+      text-transform: uppercase;
+      transition: background-color 0.3s ease;
+      margin-top: 60px;
+    }
+
+    .register-button:hover {
+        background-color: #fff4b2;
+        color: #333;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="bubble-container">
+    <div class="bubble b1">
+      <img src="https://images.pexels.com/photos/4261789/pexels-photo-4261789.jpeg?auto=compress&cs=tinysrgb&w=600" />
+    </div>
+    <div class="bubble b2">
+      <img src="https://images.pexels.com/photos/8923254/pexels-photo-8923254.jpeg?auto=compress&cs=tinysrgb&w=600" />
+    </div>
+    <div class="bubble b3">
+      <img src="https://images.pexels.com/photos/4144096/pexels-photo-4144096.jpeg?auto=compress&cs=tinysrgb&w=600" />
+    </div>
+    <div class="bubble b4">
+      <img src="https://images.pexels.com/photos/8500306/pexels-photo-8500306.jpeg?auto=compress&cs=tinysrgb&w=600" />
+    </div>
+  </div>
+
+  <div class="navbar">
+    <div class="logo">TutorMeet</div>
+    <ul class="menu">
+      <li><a href="#">About Us</a></li>
+      <li><a href="{% url 'login' %}">Login</a></li>
+    </ul>
+  </div>
+
+  <div class="main-content">
+    <h1>Where Learning Meets Interaction</h1>
+    <p>
+        "Innovation meets education: a platform enabling personalized teacher-student interactions, where educators provide tailored guidance for every child’s academic growth. Designed for seamless engagement, it fosters an environment of connection and progress. Start shaping the future of learning—register today and begin your journey towards impactful education."
+    </p>
+
+    <div class="register-container">
+      <a href="{% url 'register' %}">
+        <button class="register-button">Register</button>
+      </a>
+    </div>
+  </div>
+
+</body>
+</html>

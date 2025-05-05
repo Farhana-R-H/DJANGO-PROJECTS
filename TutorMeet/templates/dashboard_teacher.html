@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Dashboard</title>
+</head>
+<body>
+    <h1>Welcome, {{ request.user.username }}!</h1>
+    <h2>Your Scheduled Sessions:</h2>
+    <ul>
+        {% for session in sessions %}
+            <li>
+                {{ session.topic }} on {{ session.date }}
+                <a href="{% url 'view_session_attendance' session.id %}">Mark Attendance</a>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <h2>Create New Session</h2>
+    <a href="{% url 'create_session' %}">Create Session</a>
+
+    <h2>Create Assignment</h2>
+    <a href="{% url 'create_assignment' %}">Create Assignment</a>
+</body>
+</html>

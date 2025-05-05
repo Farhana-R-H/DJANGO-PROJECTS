@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form Page</title>
+</head>
+<body>
+    <form action="{% url 'show' %}" method="post">
+        {% csrf_token %}
+        <table>
+            {{ form.as_table }}
+        </table>
+        <input type="submit" value="Submit">
+    </form>
+
+    <form action="logout">
+        <input type="submit" value="Logout">
+    </form>
+
+    <p>{{ msg }}</p>
+    <p>Name: {{ name }}</p>
+    <p>Address: {{ address }}</p>
+    <p>Age: {{ age }}</p>
+    <p>Phone No: {{ phn }}</p>
+</body>
+</html>

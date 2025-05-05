@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home page</title>
+</head>
+<body>
+    <form action="addition" method="post">
+    {% csrf_token %}
+    
+    Name: <input type="text" name="name"><br>
+    Address: <input type="text" name="address"><br>
+    Age: <input type="text" name="age"><br>
+    <input type="submit" value="add employee"><br>
+    
+    </form>
+    <P>
+        {{msg}}<br>
+    </P>
+
+
+    <form action="dis">	
+        <input type="submit" value="Display"><br>
+        
+    <table border="1">
+                <tr>
+                <td>Empid</td>
+                <td>Name</td>
+                <td>Address</td>
+                <td>Age</td>
+                </tr>
+    
+                {% for i in emp %}   	<!-- Jinja format,dtl Django Template Lang -->
+                <tr>
+                <td>{{i.id}}</td>
+                <td>{{i.name}}</td>
+                <td>{{i.address}}</td>
+                <td>{{i.age}}</td>
+                </tr>
+                {% endfor %}					
+            </table><br>
+    </form>
+
+    <form action="update" method="Post">
+        {%csrf_token%}
+    
+    Old Name: 	<input type="text" name="oldname"><br>
+    Newname:	<input type="text" name="newname"><br>
+    <input type="submit" value="Update Employee"><br>
+    
+    
+    <p>
+          {{msg1}}<br>
+                
+       </p>
+    </form>
+
+    <form action="delete" method="post">
+        {%csrf_token%}
+
+        NAME: <input type="text" name="name">
+        <input type="submit" value="delete">
+
+    </form>
+    <form action="logout">
+        <input type="submit" value="Logout">
+    </form>
+    <p>{{msg2}}</p>
+    <p>{{emp1}}</p>
+</body>
+</html>

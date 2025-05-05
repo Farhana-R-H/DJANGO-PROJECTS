@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>home page</title>
+</head>
+<body>
+    <form action="show" method="post">
+        {% csrf_token %}
+        AGE: <input type="text" name="txt1">
+
+        <input type="submit" value="look eligibility">
+    </form>
+    <h1>{{nme1}}</h1>
+    
+</body>
+</html>

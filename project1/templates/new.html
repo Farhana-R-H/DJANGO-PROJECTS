@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+  {%block content %}
+    <form action="show" method="post">
+        {% csrf_token %}
+        ENTER NAME: <input type="text" name="txt">
+        <input type="submit" value="click">
+        
+
+
+
+    </form>
+    {% endblock %}
+    

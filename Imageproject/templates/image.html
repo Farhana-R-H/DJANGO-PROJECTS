@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+    <form action="add" method="post" enctype="multipart/form-data">
+        {%csrf_token%}
+
+    Product Name: <input type="txt" name="productname"><br>
+    Price: <input type="txt" name="productprice"><br>
+    Description:<textarea rows="4" cols="8" name="desc"></textarea><br><br>
+    Image: <input type="file" name="Image" accept="image/*" >   
+    
+    <br>
+    <br>
+    <input type="submit" value="Add Product">
+    </form>
+    </table>
+</body>
+</html>

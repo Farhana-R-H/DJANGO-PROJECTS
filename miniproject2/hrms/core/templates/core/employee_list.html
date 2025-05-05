@@ -1,0 +1,32 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Employee List{% endblock %}
+
+{% block content %}
+<h2>Employee Directory</h2>
+<table class="table table-bordered mt-3">
+    <tr>
+        <th>Full Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Department</th>
+        <th>Role</th>
+        <th>Salary</th>
+        <th>Actions</th>
+    </tr>
+    {% for emp in employees %}
+    <tr>
+        <td>{{ emp.first_name }} {{ emp.last_name }}</td>
+        <td>{{ emp.email }}</td>
+        <td>{{ emp.phone }}</td>
+        <td>{{ emp.department.name }}</td>
+        <td>{{ emp.role.title }}</td>
+        <td>₹{{ emp.salary }}</td>
+        <td>
+            <a href="{% url 'edit_employee' emp.pk %}" class="btn btn-sm btn-warning">Edit</a>
+            <a href="{% url 'delete_employee' emp.pk %}" class="btn btn-sm btn-danger">Delete</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

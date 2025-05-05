@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            margin: 0;
+            height: 100vh;
+            background: linear-gradient(to right, #ca7a54, #fff4b2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            display: flex;
+            width: 1300px;
+            height: 650px;
+            border-radius: 20px;
+            overflow: hidden;
+            background-color: white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .left {
+            width: 50%;
+            background: url('https://images.pexels.com/photos/8613059/pexels-photo-8613059.jpeg?auto=compress&cs=tinysrgb&w=600') no-repeat center center;
+            background-size: cover;
+        }
+        .right {
+            width: 50%;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .right h2 {
+            margin-bottom: 10px;
+            font-size: 24px;
+            color: #333;
+        }
+    
+        .right input,
+        .right select {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+        }
+        .right button {
+            margin-top: 20px;
+            padding: 12px;
+            background: black;
+            color: white;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        .right button:hover {
+            background-color: #fff4b2;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left"></div>
+        <div class="right">
+            <h2>CREATE YOUR ACCOUNT</h2>
+            <form method="POST">
+                {% csrf_token %}
+                
+                <!-- Display the form fields -->
+                {{ form.as_p }}
+                {{ profile_form.as_p }}
+                <!-- Register as Dropdown (Newly Added) -->
+                <label for="user_type">Register as:</label>
+                <select name="user_type" required>
+                    <option value="student">Student</option>
+                    <option value="teacher">Teacher</option>
+                </select>
+
+                <button type="submit">Register</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
